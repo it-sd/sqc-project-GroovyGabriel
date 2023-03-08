@@ -25,3 +25,17 @@ express()
     res.status(200).send('Healthy')
   })
   .listen(PORT, () => console.log(`Listening on ${PORT}`))
+
+// Performance test to measure the load time of a website
+const loadTimeStart = new Date().getTime()
+window.addEventListener('load', () => {
+  const loadTimeEnd = new Date().getTime()
+  const loadTime = loadTimeEnd - loadTimeStart
+  console.log(`Website loaded in ${loadTime} milliseconds`)
+})
+
+const content = document.getElementById('content')
+
+if (content.innerHTML.length < 100) {
+  alert('If you are reading this, that means that the site should be working.')
+}
