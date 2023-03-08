@@ -24,3 +24,4 @@ express()
   .get('/health', function (req, res) {
     res.status(200).send('Healthy')
   })
+  .listen(PORT, () => console.log(`Listening on ${PORT}`))
